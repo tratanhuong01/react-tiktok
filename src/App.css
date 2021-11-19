@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+.wrapper {
+  width: 80%;
+  margin: auto;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*:focus {
+  outline: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.text-main {
+  color: rgba(254, 44, 85, 1.0);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hover\:text-main:hover {
+  color: rgba(254, 44, 85, 1.0);
+}
+.bg-main {
+  background-color: rgba(254, 44, 85, 1.0);
+}
+.hover\:bg-main:hover {
+  background-color: rgba(254, 44, 85, 1.0);
+}
+.hover\:bg-second:hover {
+  background-color: rgb(233, 57, 92);
+}
+.border-color-main {
+  border-color: rgba(254, 44, 85, 1.0);
+}
+.hover\:border-color-main:hover {
+  border-color: rgba(254, 44, 85, 1.0);
+}
+.content__left {
+  width: 25%;
+  left: 10%;
+}
+.content__right {
+  left: calc(35% - 12px);
+  width: 65%;
+  box-sizing: content-box;
+}
+.hover__flex {
+  display: none;
+}
+.hover__block {
+  display: none;
+}
+.item__hover:hover .hover__flex {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.item__hover:hover .hover__block {
+  display: block;
+}
+.item__video {
+  width: 289px;
+  height: 500px;
+}
+.home__left__footer li {
+  padding: 0px 2px;
+  cursor: pointer;
+  margin: 2px;
+}
+.home__left__footer li:hover {
+  text-decoration: underline;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(226, 221, 221); 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(226, 221, 221); 
+}
+
+/* responsive */
+
+@media (min-width : 1024px) {
+  .wrapper {
+    width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+  .content__left {
+    left: 5%;
+    width: 30%;
+  }
+  .content__right {
+    left: calc(35% - 12px);
+    width: 65%;
   }
 }
+
+@media (min-width : 1280px) {
+  .wrapper {
+    width: 80%;
+  }
+  .content__left {
+    width: 25%;
+    left: 10%;
+  }
+  .content__right {
+    left: calc(35% - 12px);
+    width: 65%;
+    box-sizing: content-box;
+  }
+}
+
+/* responsive */
