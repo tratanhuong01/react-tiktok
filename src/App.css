@@ -1,7 +1,9 @@
-.wrapper {
-  width: 80%;
-  margin: auto;
+:root {
+  --animation-duration: 0.8s;
+  --circle-diameter: 12px;
+  --circle-scale-percent: 0.2;
 }
+
 *:focus {
   outline: none;
 }
@@ -26,15 +28,7 @@
 .hover\:border-color-main:hover {
   border-color: rgba(254, 44, 85, 1.0);
 }
-.content__left {
-  width: 25%;
-  left: 10%;
-}
-.content__right {
-  left: calc(35% - 12px);
-  width: 65%;
-  box-sizing: content-box;
-}
+
 .hover__flex {
   display: none;
 }
@@ -61,26 +55,55 @@
 }
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1; 
+  visibility: hidden;
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
+  visibility: hidden;
   background: rgb(226, 221, 221); 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
+  visibility: visible;
   background: rgb(226, 221, 221); 
 }
-
+/* */
+.content__left {
+  width: 75px;
+  left: 1%;
+}
+.content__right {
+  left: calc(75px);
+  width: calc(100% - 75px);
+  box-sizing: content-box;
+}
+.wrapper {
+  width: 98%;
+  margin: auto;
+}
 /* responsive */
-
+@media (min-width : 1280px) {
+  .wrapper {
+    width: 80% !important;
+  }
+  .content__left {
+    width: 25% !important;
+    left: 10% !important;
+  }
+  .content__right {
+    left: calc(35% - 12px);
+    width: 60%;
+    box-sizing: content-box;
+  }
+}
 @media (min-width : 1024px) {
   .wrapper {
     width: 90%;
@@ -94,14 +117,10 @@
     width: 65%;
   }
 }
-
-@media (min-width : 1280px) {
-  .wrapper {
-    width: 80%;
-  }
+@media (min-width : 768px) {
   .content__left {
-    width: 25%;
-    left: 10%;
+    width: 33%;
+    left: 1%;
   }
   .content__right {
     left: calc(35% - 12px);
@@ -109,5 +128,54 @@
     box-sizing: content-box;
   }
 }
-
 /* responsive */
+
+/* loading */
+
+.loader {
+  position: relative;
+  left: calc(var(--circle-diameter) * -1);
+}
+
+.loader:before,
+.loader:after {
+  content: " ";
+  display: table-cell;
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
+  border-radius: 50%;
+  position: absolute;
+  animation-duration: var(--animation-duration);
+  animation-name: revolve;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  mix-blend-mode: darken;
+}
+
+.loader:before {
+  background: rgb(77, 232, 244);
+}
+
+.loader:after {
+  background: rgb(253, 62, 62);
+  animation-delay: calc(var(--animation-duration) / -2);
+}
+
+@keyframes revolve {
+  0% {
+    left: 0;
+  }
+  25% {
+    transform: scale(calc(1 + var(--circle-scale-percent)));
+  }
+  50% {
+    left: var(--circle-diameter);
+  }
+  75% {
+    transform: scale(calc(1 - var(--circle-scale-percent)));
+  }
+  100% {
+    left: 0;
+  }
+}
+/* loading */

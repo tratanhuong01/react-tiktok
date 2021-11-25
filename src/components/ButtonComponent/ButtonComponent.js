@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom';
 
 export default function ButtonComponent(props) {
     //
-    const { link, className, type, disabled } = props;
+    const { link, className, type, disabled, handleClick } = props;
     const ref = useRef();
     useEffect(() => {
         //
-        if (disabled) {
-            ref.current.removeAttribute('href');
+        if (link) {
+            if (disabled) {
+                ref.current.removeAttribute('href');
+            }
         }
-        //
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ref, disabled]);
     //
     return (
@@ -20,7 +22,7 @@ export default function ButtonComponent(props) {
                 {props.children}
             </Link>)
             :
-            (<button type={type} className={`${className} border-solid`} disabled={disabled}>
+            (<button type={type} onClick={handleClick} className={`${className} border-solid`} disabled={disabled}>
                 {props.children}
             </button>)
     )

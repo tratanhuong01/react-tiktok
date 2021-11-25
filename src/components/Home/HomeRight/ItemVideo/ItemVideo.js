@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ModalContext } from '../../../../contexts/ModalContext/ModalContext'
+import { UserContext } from '../../../../contexts/UserContext/UserContext'
 import ButtonComponent from '../../../ButtonComponent/ButtonComponent'
 import VideoShow from './VideoShow'
 
-export default function ItemVideo() {
+export default function ItemVideo(props) {
     //
+    const { pos } = props;
+    const { modalActions, modalDispatch } = useContext(ModalContext);
+    const [following, setFollowing] = useState(false);
+    const { user } = useContext(UserContext);
     //
     return (
-        <div className="w-full box-content flex pb-4 mb-4 border-b border-solid border-gray-200">
-            <div className="w-20">
-                <img src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/dc6373c9f27bf0d04801297c1aa83193~c5_100x100.jpeg?x-expires=1637384400&x-signature=jMviPA52u4gdwwKuj9df1QcbhUA%3D"
+        <div className="w-full box-content flex pb-5 mb-4 border-b border-solid border-gray-200">
+            <div className="w-16 mr-3 md:w-20">
+                <img src="https://res.cloudinary.com/huongdev2k1/image/upload/v1636725936/255009803_3041975736085606_4431487666238605481_n_nxbzjl.jpg"
                     alt="" className="w-16 h-16 rounded-full " />
             </div>
             <div className="relative block" style={{ width: "calc(100% - 80px)" }}>
@@ -25,11 +31,13 @@ export default function ItemVideo() {
                         <i className='bx bxs-music text-base text-gray-800 mr-3' ></i>
                         <span className="hover:underline font-bold">Mắt nai - 𝚑𝚘𝚗𝚐𝚑𝚘𝚊𝚗𝚐𝚔𝚑𝚊𝚗𝚐</span>
                     </p>
-                    <VideoShow />
+                    <VideoShow pos={pos} active={props.active} index={props.index} setOnVolume={props.setOnVolume} onVolume={props.onVolume} />
                 </div>
-                <ButtonComponent type="button" className="font-bold px-6 py-1.5 text-sm rounded-lg border border-solid border-color-main 
-                absolute top-3 right-3 text-main hover:bg-pink-50 z-10">
-                    Follow
+                <ButtonComponent handleClick={() => user ? setFollowing(!following) :
+                    modalDispatch(modalActions.openModalLogin())} type="button"
+                    className={`font-bold px-6 py-1.5 text-sm rounded-lg border border-solid absolute -top-3 md:top-0 right-1 
+                    ${following ? ' border-gray-300' : 'text-main hover:bg-pink-50 border-color-main'}  z-10`}>
+                    {following ? 'Following' : 'Follow'}
                 </ButtonComponent>
             </div>
         </div>
