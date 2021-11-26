@@ -4,3 +4,10 @@ export const REGEX_NUMBER_PHONE =
 export const REGEX_EMAIL_OR_USERNAME = /^(?:[A-Z\d][A-Z\d_-]{5,10}|[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4})$/i;
 //
 export const REGEX_NUMBER = /^\d+$/;
+//
+export const PAGE_HOME = "/";
+//
+export const PAGE_UPLOAD = "/upload";
+//
+export const PAGE_PROFILE = "/profile";
+//

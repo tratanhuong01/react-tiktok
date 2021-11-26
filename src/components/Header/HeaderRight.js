@@ -1,4 +1,6 @@
 import React, { useContext } from 'react'
+import { useNavigate } from 'react-router'
+import { PAGE_UPLOAD } from '../../constants/Config'
 import { ModalContext } from '../../contexts/ModalContext/ModalContext'
 import { UserContext } from '../../contexts/UserContext/UserContext'
 import ButtonComponent from '../ButtonComponent/ButtonComponent'
@@ -19,6 +21,7 @@ export default function HeaderRight() {
         icon: "bx bxs-keyboard",
         content: "Keyword on keyboard",
     }]
+    const navigate = useNavigate();
     const { modalActions, modalDispatch } = useContext(ModalContext);
     const { user } = useContext(UserContext);
     //
@@ -28,11 +31,18 @@ export default function HeaderRight() {
                 <UserLogged />
                 :
                 <ul className="flex items-center">
-                    <li className="px-3 py-2.5 font-bold hover:underline cursor-pointer">Upload</li>
+                    <li onClick={() => {
+                        if (user) {
+                            navigate(PAGE_UPLOAD)
+                        }
+                        else {
+                            modalDispatch(modalActions.openModalLogin())
+                        }
+                    }} className="px-3 py-2.5 font-bold hover:underline cursor-pointer">Upload</li>
                     <li className="px-3 py-2.5 font-bold">
                         <ButtonComponent handleClick={() => modalDispatch(modalActions.openModalLogin())}
-                            type="button" className="px-10 py-2.5 bg-main text-white rounded-md font-bold 
-                        hover:bg-second">
+                            type="button" className="px-10 py-2 bg-main text-white rounded-md font-bold 
+                            hover:bg-second">
                             Login
                         </ButtonComponent>
                     </li>

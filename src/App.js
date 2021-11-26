@@ -4,13 +4,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import 'boxicons';
 import { UserProvider } from './contexts/UserContext/UserContext';
+import routes from './routes/routes';
 
 function App() {
   return (
     <UserProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          {routes.map((route, index) => <Route key={index} path={route.to} element={route.element} />)}
         </Routes>
       </BrowserRouter>
     </UserProvider>

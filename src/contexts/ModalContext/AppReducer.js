@@ -1,4 +1,5 @@
 import ModalAuthenication from '../../components/Modals/ModalAuthenication/ModalAuthenication';
+import ModalWarning from '../../components/Modals/ModalWarning/ModalWarning';
 import * as constants from './Constant';
 
 const AppReducer = (state, action) => {
@@ -8,7 +9,9 @@ const AppReducer = (state, action) => {
         case constants.SET_LOADING_MODAL:
             return { ...state, loading: action.loading };
         case constants.CLOSE_MODAL:
-            return { ...state, data: null, loading: false }
+            return { ...state, data: null, loading: false };
+        case constants.OPEN_MODAL_WARNING:
+            return { ...state, data: <ModalWarning data={action.data} /> }
         default:
             return { ...state };
     }

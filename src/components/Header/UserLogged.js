@@ -1,12 +1,16 @@
 import React, { useContext } from 'react'
+import { useNavigate } from 'react-router';
+import { PAGE_PROFILE, PAGE_UPLOAD } from '../../constants/Config';
 import { UserContext } from '../../contexts/UserContext/UserContext';
 
 const ItemPopupUserChoose = (props) => {
     //
-    const { name, icon } = props;
+    const history = useNavigate();
+    const { name, icon, handleClick } = props;
     //
     return (
-        <li className=" p-2 cursor-pointer hover:bg-gray-50 flex items-center">
+        <li onClick={() => typeof handleClick === "function" && handleClick(history)}
+            className=" p-2 cursor-pointer hover:bg-gray-50 flex items-center">
             <span className={`${icon} text-gray-800 text-xl mr-3 `}>
             </span>
             <div className="font-semibold">
@@ -18,12 +22,14 @@ const ItemPopupUserChoose = (props) => {
 
 export default function UserLogged() {
     //
+    const history = useNavigate();
     const { userDispatch, userActions } = useContext(UserContext);
     const datas = [
         {
             id: 0,
             icon: "bx bx-user",
-            name: "View Profile"
+            name: "View Profile",
+            handleClick: (history) => history(PAGE_PROFILE)
         },
         {
             id: 1,
@@ -54,7 +60,7 @@ export default function UserLogged() {
     //
     return (
         <ul className="flex items-center">
-            <li className="px-3 py-2.5 font-bold cursor-pointer">
+            <li onClick={() => history(PAGE_UPLOAD)} className="px-3 py-2.5 font-bold cursor-pointer">
                 <i className='bx bx-cloud-upload text-3xl'></i>
             </li>
             <li className="px-3 py-2.5 font-bold cursor-pointer">

@@ -2,13 +2,13 @@ import React from 'react'
 
 export default function InputComponent(props) {
     //
-    const { type, name, className, onChange, placeholder, register, errors, showError, label, wrap, errorInSide } = props;
+    const { type, name, className, onChange, placeholder, value, register, errors, showError, label, wrap, errorInSide } = props;
     const Field = typeof register === "function" ? register(name, { required: true }) : {};
     //
     return <>
         {!showError ?
             <input type={type} name={name}
-                className={`${className} border-solid `} onChange={(event) => {
+                className={`${className} border-solid `} value={value} onChange={(event) => {
                     if (typeof onChange === "function") onChange(event)
                 }} placeholder={placeholder} spellCheck={false} />
             :

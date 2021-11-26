@@ -22,7 +22,8 @@ export default function ButtonComponent(props) {
                 {props.children}
             </Link>)
             :
-            (<button type={type} onClick={handleClick} className={`${className} border-solid`} disabled={disabled}>
+            (<button type={type} onClick={handleClick} className={`${className} border-solid 
+            ${disabled ? 'cursor-not-allowed bg-gray-200 text-gray-500' : ''}`} disabled={disabled}>
                 {props.children}
             </button>)
     )

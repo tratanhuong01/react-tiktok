@@ -1,0 +1,6 @@
+export const UPDATE_CAPTON = "UPDATE_CAPTION";
+//
+export const UPDATE_ALLOW = "UPDATE_ALLOW";
+//
+export const UPDATE_DATA_VIDEO = "UPDATE_DATA_VIDEO";
+//

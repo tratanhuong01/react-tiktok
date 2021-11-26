@@ -18,3 +18,10 @@ export const setLoadingModal = (loading) => {
         loading
     }
 }
+
+export const openModalWarning = (data) => {
+    return {
+        type: constants.OPEN_MODAL_WARNING,
+        data
+    }
+}
