@@ -20,7 +20,7 @@ export default function HeaderRight() {
         id: 2,
         icon: "bx bxs-keyboard",
         content: "Keyword on keyboard",
-    }]
+    }];
     const navigate = useNavigate();
     const { modalActions, modalDispatch } = useContext(ModalContext);
     const { user } = useContext(UserContext);

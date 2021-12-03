@@ -1,7 +1,6 @@
 import React from 'react'
 import "./App.css";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage';
 import 'boxicons';
 import { UserProvider } from './contexts/UserContext/UserContext';
 import routes from './routes/routes';

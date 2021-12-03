@@ -10,7 +10,7 @@ const initialState = {
 export const ModalContext = createContext(initialState);
 
 export const ModalProvider = (props) => {
-    const [state, dispatch] = useReducer(AppReducer, initialState)
+    const [state, dispatch] = useReducer(AppReducer, initialState);
     return <ModalContext.Provider value={
         {
             state,

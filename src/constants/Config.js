@@ -11,3 +11,5 @@ export const PAGE_UPLOAD = "/upload";
 //
 export const PAGE_PROFILE = "/profile";
 //
+export const PAGE_DETAIL_VIDEO = "/video/";
+//

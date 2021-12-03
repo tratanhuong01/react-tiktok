@@ -3,7 +3,7 @@ import { ModalContext } from '../../contexts/ModalContext/ModalContext'
 
 export default function Modal(props) {
     //
-    const { state } = useContext(ModalContext)
+    const { state } = useContext(ModalContext);
     useEffect(() => {
         //
         if (state.data) {

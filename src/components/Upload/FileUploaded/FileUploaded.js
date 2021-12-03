@@ -1,10 +1,22 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import { ModalContext } from '../../../contexts/ModalContext/ModalContext';
+import VideoShow from '../VideoShow/VideoShow';
 
 export default React.memo(function FileUploaded(props) {
     //
-    const { file } = props;
+    const { file, setFile, refVideo, setDuration, duration } = props;
+    const refInputFile = useRef();
+    const refButtonClick = useRef();
     const { modalActions, modalDispatch } = useContext(ModalContext);
+    useEffect(() => {
+        //
+        if (file) {
+            if (refButtonClick.current) {
+                refButtonClick.current.click();
+            }
+        }
+        //
+    }, [file, refVideo, duration]);
     //
     return (
         <div className=""
@@ -13,11 +25,7 @@ export default React.memo(function FileUploaded(props) {
                 <div className="w-full border-gray-800 border-8 border-solid rounded-3xl h-full bg-gray-800 relative">
                     <div className="w-full border-black border-solid h-full border-t-4 border-b-4 bg-black rounded-3xl 
                     relative">
-                        <div className="w-full absolute top-0 rounded-xl"
-                            style={{ height: "97%" }}>
-                            <video className="w-full h-full -mt-4 rounded-xl px-0.5" src={URL.createObjectURL(file)}
-                            ></video>
-                        </div>
+                        <VideoShow refVideo={refVideo} setDuration={setDuration} file={file} refButtonClick={refButtonClick} />
                         <ul className="w-20 absolute -right-3 bottom-12">
                             <li className="flex justify-center my-4 w-full opacity-60">
                                 <img src={`https://res.cloudinary.com/huongdev2k1/image/upload/v1636725936/255009803_3041975736085606_4431487666238605481_n_nxbzjl.jpg`}
@@ -73,11 +81,28 @@ export default React.memo(function FileUploaded(props) {
                     <span className="bx bx-check-circle text-xl mr-2"></span>
                     <span className="text-gray-600">{file.name}</span>
                 </div>
+                <input ref={refInputFile} type="file"
+                    className="hidden"
+                />
                 <span onClick={() => modalDispatch(modalActions.openModalWarning({
                     title: "Replace this video",
                     description: "Caption and video settings will still be saved.",
                     buttonFirst: "Replace",
-                    buttonSecond: "Continue editing"
+                    buttonSecond: "Continue editing",
+                    paramButtonFirst: refInputFile.current,
+                    functionButtonFirst: (inputFile) => {
+                        if (inputFile) {
+                            inputFile.addEventListener('change', (event) => {
+                                if (event.target.files.length > 0) {
+                                    setFile(event.target.files[0])
+                                }
+                            });
+                            inputFile.addEventListener('click', () => {
+                                setFile(null);
+                            });
+                            inputFile.click();
+                        }
+                    }
                 }))} className="cursor-pointer text-xs hover:underline font-semibold">Change video</span>
             </div>
         </div >

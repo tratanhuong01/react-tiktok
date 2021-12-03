@@ -5,7 +5,7 @@ import HeaderRight from './HeaderRight'
 
 export default function HeaderWrapper(props) {
     return (
-        <header className="w-full fixed top-0 bg-white py-0.5 border-b-2 border-solid border-gray-100 z-50 ">
+        <header className="w-full fixed top-0 bg-white border-b-2 border-solid border-gray-100 z-50 ">
             <div className="wrapper flex">
                 <HeaderLeft />
                 <HeaderCenter />

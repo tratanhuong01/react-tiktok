@@ -2,9 +2,10 @@ import React, { useEffect, useRef, useState } from 'react'
 import SharePopup from './SharePopup';
 import tiktok_1 from "../../../../assets/videos/tiktok_1.mp4";
 import tiktok_2 from "../../../../assets/videos/tiktok_2.mp4";
+import tiktok_3 from "../../../../assets/videos/tiktok_3.mp4";
 export default function VideoShow(props) {
     //
-    const { active, index, setOnVolume, onVolume, pos } = props;
+    const { active, index, setOnVolume, onVolume } = props;
     const [play, setPlay] = useState(false);
     const [volume, setVolume] = useState(0);
     const [love, setLove] = useState(false);
@@ -47,7 +48,7 @@ export default function VideoShow(props) {
     return (
         <div ref={refWrap} className="item__video relative my-2">
             <div ref={refMain} className="w-full h-full relative item__hover -ml-5 md:ml-0">
-                <video loop ref={refVideo} src={pos ? tiktok_2 : tiktok_1} className="h-full">
+                <video loop ref={refVideo} src={index % 2 === 0 ? tiktok_2 : index % 3 === 0 ? tiktok_3 : tiktok_1} className="h-full">
                 </video>
                 <i onClick={() => {
                     if (refVideo.current) {

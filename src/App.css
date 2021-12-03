@@ -245,3 +245,14 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar__move {
+  transition: 0.5s;
+}
+.item__video__list {
+  width: calc((100% / 3) - 4px);
+}
+
+.wrapper__profile {
+  width: 85%;
+}
