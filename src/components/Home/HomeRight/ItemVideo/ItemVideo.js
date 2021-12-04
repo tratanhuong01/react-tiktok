@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { PAGE_DETAIL_VIDEO } from '../../../../constants/Config'
+import { PAGE_PROFILE } from '../../../../constants/Config'
 import { ModalContext } from '../../../../contexts/ModalContext/ModalContext'
 import { UserContext } from '../../../../contexts/UserContext/UserContext'
 import ButtonComponent from '../../../ButtonComponent/ButtonComponent'
@@ -22,7 +22,7 @@ export default function ItemVideo(props) {
             <div className="relative block" style={{ width: "calc(100% - 80px)" }}>
                 <div className="max-w-3/4">
                     <p className="flex mb-1.5 items-center">
-                        <Link to={PAGE_DETAIL_VIDEO} className="font-bold mr-3 hover:underline">thaisalen89</Link>
+                        <Link to={PAGE_PROFILE} className="font-bold mr-3 hover:underline">thaisalen89</Link>
                         <span className="text-sm text-gray-600">Thai salen</span>
                     </p>
                     <p className="mb-1.5 text-gray-600 text-xm">một nụ hồng dành cho mắt naiii 🥺

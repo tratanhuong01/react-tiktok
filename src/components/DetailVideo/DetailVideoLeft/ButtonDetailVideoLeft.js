@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router';
 import Logo from './Logo'
 import VolumeVideo from './VolumeVideo';
 
@@ -17,10 +18,14 @@ const Button = (props) => {
     );
 }
 
-export default function ButtonDetailVideoLeft() {
+export default function ButtonDetailVideoLeft(props) {
+    //
+    const { refVideo } = props;
+    const nav = useNavigate();
+    //
     return (
         <>
-            <Button className="w-10 h-10 text-2xl absolute top-5 left-5 ">
+            <Button handleClick={() => nav(-1)} className="w-10 h-10 text-2xl absolute top-5 left-5 ">
                 &times;
             </Button>
             <div className="fixed top-5 left-20 w-12 h-12 rounded-full z-50">
@@ -38,7 +43,7 @@ export default function ButtonDetailVideoLeft() {
                 <i className="bx bx-flag text-2xl mr-3"></i>
                 Report
             </Button>
-            <VolumeVideo Button={Button} />
+            <VolumeVideo Button={Button} refVideo={refVideo} />
         </>
     )
 }

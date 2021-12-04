@@ -75,7 +75,9 @@ export default function UserLogged() {
                 <div className="w-60 absolute top-full -mt-4 rounded-md right-2 hover__block hidden py-4">
                     <ul className="w-full mb-3 py-1 hover__block border-2 bg-white border-solid border-gray-200 shadow-lg 
                     rounded-md">
-                        {datas.map(data => <ItemPopupUserChoose name={data.name} icon={data.icon} key={data.id} />)}
+                        {datas.map(data => <ItemPopupUserChoose name={data.name}
+                            handleClick={() => typeof data.handleClick === "function" ? data.handleClick(history) : ""}
+                            icon={data.icon} key={data.id} />)}
                         <hr className="mt-3" />
                         <li onClick={() => userDispatch(userActions.logoutUser())} className=" p-2 bg-white mt-3 cursor-pointer hover:bg-gray-50 flex items-center">
                             <span className={`bx bx-log-out text-gray-800 text-xl mr-3 `}>

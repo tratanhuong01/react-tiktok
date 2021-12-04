@@ -256,3 +256,20 @@
 .wrapper__profile {
   width: 85%;
 }
+.arrow__center__bottom {
+  background-color: gray;
+  clear: both;
+  display: inline-block;
+  white-space: nowrap;
+}
+.arrow__center__bottom::before {
+  content: "";
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  transform: translateY(-50%);
+  border : 12px solid gray;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-left-color: transparent;
+}
