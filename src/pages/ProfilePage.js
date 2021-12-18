@@ -16,8 +16,8 @@ export default function ProfilePage() {
             <HomeLeft />
             <div className="content__right pt-24 relative">
                 <div className="wrapper__profile ml-auto flex relative">
-                    <img src="https://res.cloudinary.com/huongdev2k1/image/upload/v1636725936/255009803_3041975736085606_4431487666238605481_n_nxbzjl.jpg" alt=""
-                        className="w-28 h-28 -ml-1.5 rounded-full mr-5" />
+                    <img src="https://res.cloudinary.com/huongdev2k1/image/upload/v1639533621/E-Commerce/AvatarUser/1000000024.jpg" alt=""
+                        className="w-28 h-28 -ml-1.5 rounded-full mr-5 object-cover" />
                     <div className="flex items-center">
                         <div className="">
                             <p className="text-3xl font-semibold mb-1">trahuongdev</p>

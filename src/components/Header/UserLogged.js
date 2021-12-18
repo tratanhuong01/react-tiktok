@@ -70,7 +70,7 @@ export default function UserLogged() {
                 <i className='bx bx-message-dots text-2xl transform translate-y-0.5'></i>
             </li>
             <li className="px-3 py-2.5 font-bold cursor-pointer relative item__hover">
-                <img src="https://res.cloudinary.com/huongdev2k1/image/upload/v1636725936/255009803_3041975736085606_4431487666238605481_n_nxbzjl.jpg"
+                <img src="https://res.cloudinary.com/huongdev2k1/image/upload/v1639533621/E-Commerce/AvatarUser/1000000024.jpg"
                     alt="" className="w-9 h-9 rounded-full object-cover" />
                 <div className="w-60 absolute top-full -mt-4 rounded-md right-2 hover__block hidden py-4">
                     <ul className="w-full mb-3 py-1 hover__block border-2 bg-white border-solid border-gray-200 shadow-lg 

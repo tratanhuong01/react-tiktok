@@ -16,8 +16,8 @@ export default function ItemVideo(props) {
     return (
         <div className="w-full box-content flex pb-5 mb-4 border-b border-solid border-gray-200">
             <div className="w-16 mr-3 md:w-20">
-                <img src="https://res.cloudinary.com/huongdev2k1/image/upload/v1636725936/255009803_3041975736085606_4431487666238605481_n_nxbzjl.jpg"
-                    alt="" className="w-16 h-16 rounded-full " />
+                <img src="https://res.cloudinary.com/huongdev2k1/image/upload/v1639533621/E-Commerce/AvatarUser/1000000024.jpg"
+                    alt="" className="w-16 h-16 rounded-full object-cover " />
             </div>
             <div className="relative block" style={{ width: "calc(100% - 80px)" }}>
                 <div className="max-w-3/4">

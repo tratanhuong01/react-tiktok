@@ -22,7 +22,7 @@ export default function ItemComment(props) {
     return (
         <div className="w-full flex mb-1 mt-2 relative">
             <Link to="">
-                <img src="https://res.cloudinary.com/huongdev2k1/image/upload/v1636725936/255009803_3041975736085606_4431487666238605481_n_nxbzjl.jpg"
+                <img src="https://res.cloudinary.com/huongdev2k1/image/upload/v1639533621/E-Commerce/AvatarUser/1000000024.jpg"
                     alt="" className="w-12 h-12 object-cover rounded-full " />
             </Link>
             <div className="ml-3">

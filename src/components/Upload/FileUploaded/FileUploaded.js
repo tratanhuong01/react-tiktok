@@ -28,7 +28,7 @@ export default React.memo(function FileUploaded(props) {
                         <VideoShow refVideo={refVideo} setDuration={setDuration} file={file} refButtonClick={refButtonClick} />
                         <ul className="w-20 absolute -right-3 bottom-12">
                             <li className="flex justify-center my-4 w-full opacity-60">
-                                <img src={`https://res.cloudinary.com/huongdev2k1/image/upload/v1636725936/255009803_3041975736085606_4431487666238605481_n_nxbzjl.jpg`}
+                                <img src={`https://res.cloudinary.com/huongdev2k1/image/upload/v1639533621/E-Commerce/AvatarUser/1000000024.jpg`}
                                     alt=""
                                     className="w-11 h-11 object-cover rounded-full"
                                 />
@@ -44,7 +44,7 @@ export default React.memo(function FileUploaded(props) {
                             </li>
                             <li className="flex justify-center my-4 opacity-60">
                                 <div className="w-12 h-12 spin__circle rounded-full flex items-center justify-center bg-black">
-                                    <img src={`https://res.cloudinary.com/huongdev2k1/image/upload/v1636725936/255009803_3041975736085606_4431487666238605481_n_nxbzjl.jpg`}
+                                    <img src={`https://res.cloudinary.com/huongdev2k1/image/upload/v1639533621/E-Commerce/AvatarUser/1000000024.jpg`}
                                         alt=""
                                         className="w-7 h-7 object-cover rounded-full"
                                     />

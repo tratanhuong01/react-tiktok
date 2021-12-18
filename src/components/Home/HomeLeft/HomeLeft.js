@@ -41,7 +41,7 @@ export default function HomeLeft() {
         return arr.map((item, index) => {
             return <ItemAccountReCommended
                 key={index}
-                src="https://res.cloudinary.com/huongdev2k1/image/upload/v1636725936/255009803_3041975736085606_4431487666238605481_n_nxbzjl.jpg"
+                src="https://res.cloudinary.com/huongdev2k1/image/upload/v1639533621/E-Commerce/AvatarUser/1000000024.jpg"
                 alt=""
                 name={name}
                 child={child}

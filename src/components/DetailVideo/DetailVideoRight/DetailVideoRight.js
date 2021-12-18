@@ -15,8 +15,8 @@ export default function DetailVideoRight() {
                 <div className="w-11/12 mx-auto pt-10 items-start flex flex-col">
                     <div className="w-full flex relative">
                         <Link to={""}>
-                            <img src="https://res.cloudinary.com/huongdev2k1/image/upload/v1636725936/255009803_3041975736085606_4431487666238605481_n_nxbzjl.jpg"
-                                alt="" className="w-12 h-12 rounded-full mr-2" />
+                            <img src="https://res.cloudinary.com/huongdev2k1/image/upload/v1639533621/E-Commerce/AvatarUser/1000000024.jpg"
+                                alt="" className="w-12 h-12 object-cover rounded-full mr-2" />
                         </Link>
                         <div className="">
                             <p className="font-semibold mb-1">huongdev2k1</p>
