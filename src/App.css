@@ -212,7 +212,9 @@
 .item__video__list {
   width: calc((100% / 2) - 4px);
 }
-
+.max-h-1\/2 {
+  max-height: 50vh;
+}
 .wrapper__profile {
   width: 85%;
 }

@@ -7,7 +7,7 @@ import { ModalProvider } from '../contexts/ModalContext/ModalContext'
 export default function DetailVideoPage() {
     return (
         <ModalProvider>
-            <div className="w-full h-screen overflow-hidden flex flex-col lg:flex-row relative">
+            <div className="w-full h-screen overflow-hidden md:flex relative">
                 <DetailVideoLeft />
                 <DetailVideoRight />
             </div>

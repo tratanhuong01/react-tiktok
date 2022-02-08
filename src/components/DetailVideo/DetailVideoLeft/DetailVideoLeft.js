@@ -41,7 +41,7 @@ export default function DetailVideoLeft() {
     }, [time, timeVideo, play]);
     //
     return (
-        <div className="lg:w-3/5 w-full relative h-full overflow-hidden">
+        <div className="lg:w-3/5 w-full relative h-1/2 md:h-full overflow-hidden">
             <ButtonDetailVideoLeft refVideo={refVideo} />
             <button onClick={() => {
                 refVideo.current && refVideo.current.play()
