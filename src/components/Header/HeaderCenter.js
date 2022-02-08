@@ -4,7 +4,7 @@ import InputComponent from '../InputComponent/InputComponent'
 
 export default function HeaderCenter() {
     return (
-        <div className="w-2/4 flex items-center justify-center  invisible md:visible mr-8 lg:mr-0">
+        <div className="w-2/5 lg:w-2/4 items-center justify-center hidden md:flex lg:mr-8 lg:mr-0">
             <div className="w-8/12 flex items-center">
                 <InputComponent type="text" className="w-10/12 p-2 bg-gray-50 border-gray-100 border-2 rounded-l-full "
                     placeholder="Search..." />

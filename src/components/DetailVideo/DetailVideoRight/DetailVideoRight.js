@@ -10,7 +10,7 @@ export default function DetailVideoRight() {
     const [following, setFollowing] = useState(false);
     //
     return (
-        <div className="w-2/5 h-full ">
+        <div className="lg:w-2/5 w-full h-full ">
             <div className="w-full mx-auto h-full flex flex-col overflow-hidden">
                 <div className="w-11/12 mx-auto pt-10 items-start flex flex-col">
                     <div className="w-full flex relative">

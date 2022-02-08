@@ -26,7 +26,7 @@ export default function HeaderRight() {
     const { user } = useContext(UserContext);
     //
     return (
-        <div className="w-1/4 flex items-center justify-end">
+        <div className="w-3/5 lg:w-2/5 flex items-center justify-end">
             {user ?
                 <UserLogged />
                 :

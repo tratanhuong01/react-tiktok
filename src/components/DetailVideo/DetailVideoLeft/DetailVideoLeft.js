@@ -41,13 +41,13 @@ export default function DetailVideoLeft() {
     }, [time, timeVideo, play]);
     //
     return (
-        <div className="w-3/5 relative h-full overflow-hidden">
+        <div className="lg:w-3/5 w-full relative h-full overflow-hidden">
             <ButtonDetailVideoLeft refVideo={refVideo} />
             <button onClick={() => {
                 refVideo.current && refVideo.current.play()
             }} className="hidden" ref={refButtonClick}></button>
             <div className="w-full h-full relative">
-                <div className="w-1/2 mx-auto relative h-full item__hover">
+                <div className="w-5/12 md:w-1/3 lg:w-1/2 mx-auto relative h-full item__hover">
                     <video onClick={() => {
                         setPlay(!play);
                         if (refVideo.current) {

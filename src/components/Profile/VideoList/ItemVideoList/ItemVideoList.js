@@ -23,7 +23,8 @@ export default function ItemVideoList(props) {
     }, [indexPlay, ref, index])
     //  
     return (
-        <div onClick={() => nav(PAGE_DETAIL_VIDEO)} onMouseEnter={() => setIndexPlay(index)} className="item__video__list relative p-0.5 cursor-pointer">
+        <div onClick={() => nav(PAGE_DETAIL_VIDEO)} onMouseEnter={() => setIndexPlay(index)}
+            className="item__video__list relative p-0.5 cursor-pointer">
             <video ref={ref} src={tiktok_3} className="w-full object-cover h-72" muted>
 
             </video>
